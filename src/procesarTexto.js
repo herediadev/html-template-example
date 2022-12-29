@@ -5,11 +5,11 @@
  * }
  * @param object
  */
-const processWords = (object) => {
+const procesarTexto = (object) => {
     console.log(object);
 };
 
 
 module.exports = {
-    processWords
+    procesarTexto
 }

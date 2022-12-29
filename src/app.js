@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const {processWords} = require("./processWords");
+const {procesarTexto} = require("./procesarTexto");
 const app = express();
 
 app.use(express.urlencoded());
@@ -10,8 +10,8 @@ app.get('/', function (req, res) {
 });
 
 app.post('/enviar', function (req, res) {
+    procesarTexto(req.body);
     res.sendFile(path.join(__dirname + '/respuesta.html'));
-    processWords(req.body);
 });
 
 app.listen(process.env.port || 3000);
